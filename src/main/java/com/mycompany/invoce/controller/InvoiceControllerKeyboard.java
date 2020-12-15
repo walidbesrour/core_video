@@ -5,9 +5,17 @@ import com.mycompany.invoce.service.InvoiceServiceInterface;
 
 import java.util.Scanner;
 
-public class InvoiceController  implements InvoiceControllerInterface{
+public class InvoiceControllerKeyboard implements InvoiceControllerInterface{
 
     private InvoiceServiceInterface invoiceService ;
+
+    public InvoiceServiceInterface getInvoiceService() {
+        return invoiceService;
+    }
+
+    public void setInvoiceService(InvoiceServiceInterface invoiceService) {
+        this.invoiceService = invoiceService;
+    }
 
     public void createInvoic(){
 

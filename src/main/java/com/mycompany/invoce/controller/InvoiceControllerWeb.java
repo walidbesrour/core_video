@@ -2,15 +2,21 @@ package com.mycompany.invoce.controller;
 
 import com.mycompany.invoce.entity.Invoice;
 import com.mycompany.invoce.service.InvoiceServiceInterface;
-import com.mycompany.invoce.service.InvoiceServiceMichel;
 
 
-
-public class InvoiceControllerMichel implements InvoiceControllerInterface {
+public class InvoiceControllerWeb implements InvoiceControllerInterface {
 
     private InvoiceServiceInterface invoiceService ;
-    public void createInvoic(){
 
+    public InvoiceServiceInterface getInvoiceService() {
+        return invoiceService;
+    }
+
+    public void setInvoiceService(InvoiceServiceInterface invoiceService) {
+        this.invoiceService = invoiceService;
+    }
+
+    public void createInvoic(){
 
         String name = "walid";
         Invoice invoice = new Invoice();
