@@ -18,7 +18,7 @@ public class InvoiceControllerWeb implements InvoiceControllerInterface {
 
     public void createInvoic(){
 
-        String name = "walid";
+        String name = "walid bean";
         Invoice invoice = new Invoice();
         invoice.setCustomerName(name);
 
