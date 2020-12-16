@@ -6,7 +6,7 @@ import com.mycompany.invoce.service.InvoiceServiceInterface;
 import org.springframework.stereotype.Controller;
 
 
-@Controller
+//@Controller
 public class InvoiceControllerDouchette implements InvoiceControllerInterface {
 
     private InvoiceServiceInterface invoiceService ;
