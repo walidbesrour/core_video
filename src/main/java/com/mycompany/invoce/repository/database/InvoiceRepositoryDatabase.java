@@ -1,12 +1,14 @@
-package com.mycompany.invoce.repository;
+package com.mycompany.invoce.repository.database;
 
 import com.mycompany.invoce.entity.Invoice;
-
+import com.mycompany.invoce.repository.InvoiceRepositoryInterface;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvoiceRepositoryMemory implements InvoiceRepositoryInterface {
+@Repository
+public class InvoiceRepositoryDatabase implements InvoiceRepositoryInterface {
 
     private static List<Invoice> invoices = new ArrayList<>();
 
@@ -15,12 +17,12 @@ public class InvoiceRepositoryMemory implements InvoiceRepositoryInterface {
     }
 
     public static void setInvoices(List<Invoice> invoices) {
-        InvoiceRepositoryMemory.invoices = invoices;
+        InvoiceRepositoryDatabase.invoices = invoices;
     }
 
     public void creat(Invoice invoice){
         invoices.add(invoice);
-        System.out.println("invoices added with number " +
+        System.out.println("database invoices added with number " +
                 invoice.getNumber()+" for "+ invoice.getCustomerName());
 
     }

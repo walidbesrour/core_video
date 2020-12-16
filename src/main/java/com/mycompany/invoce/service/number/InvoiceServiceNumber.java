@@ -1,11 +1,14 @@
-package com.mycompany.invoce.service;
+package com.mycompany.invoce.service.number;
 
 import com.mycompany.invoce.entity.Invoice;
 import com.mycompany.invoce.repository.InvoiceRepositoryInterface;
+import com.mycompany.invoce.service.InvoiceServiceInterface;
+import org.springframework.stereotype.Service;
 
-public class InvoiceServicePrefix implements InvoiceServiceInterface{
+@Service
+public class InvoiceServiceNumber implements InvoiceServiceInterface {
 
-    private static long loastNumber = 112L;
+    private static long loastNumber = 1L;
 
     private InvoiceRepositoryInterface invoiceRepository;
 
@@ -18,7 +21,7 @@ public class InvoiceServicePrefix implements InvoiceServiceInterface{
     }
 
     public void createInvoice(Invoice invoice){
-        invoice.setNumber(String.valueOf("INV_"+(++loastNumber)));
+        invoice.setNumber(String.valueOf(loastNumber++));
         invoiceRepository.creat(invoice);
 
     }
